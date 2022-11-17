@@ -17,7 +17,6 @@
   </head>
   <body>
     <h1>Chat</h1>
-    <figure><img id="Avatar" alt="Avatar"></figure>
     <form action="javascript:agrega();">
       <input id="texto" type="text" required placeholder="Mensaje">
       <button>Enviar</button>
@@ -105,7 +104,7 @@
                  * para evitar inyección de código. */
                 // @ts-ignore
                 mensajes.innerHTML += /* html */
-                  `<li><u>${cod(data.USUARIO)}</u> ${dformat}<br>${cod(data.TEXTO)}</li>`;
+                  `<li><figure><img id="Avatar" alt="Avatar"></figure><u>${cod(data.USUARIO)}</u> ${dformat}<br>${cod(data.TEXTO)}</li>`;
               })
             },
             /* Función que se invoca cuando hay un error. Muestra el error. Al
