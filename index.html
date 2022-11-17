@@ -16,7 +16,6 @@
     <script src="js/init.js"></script>
   </head>
   <body>
-    <img src="https://lh3.googleusercontent.com/a/ALm5wu1AselSN-eCHVIxCOrq9Mcrf9apV_6Zlav1qQx_=s96-c" alt="">
     <h1>Chat</h1>
     <form action="javascript:agrega();">
       <input id="texto" type="text" required placeholder="Mensaje">
@@ -73,6 +72,7 @@
           TEXTO: texto.value.trim(),
           // @ts-ignore
           TIMESTAMP: firebase.firestore.FieldValue.serverTimestamp(),
+          AVATAR: avatar,
         });
       }
       /** Muestra los mensaje almacenados en la collection "MENSAJE". Se
@@ -105,7 +105,7 @@
                  * para evitar inyección de código. */
                 // @ts-ignore
                 mensajes.innerHTML += /* html */
-                  `<li><u>${cod(data.USUARIO)}</u> ${dformat}<br>${cod(data.TEXTO)}<br>${avatar}</li>`;
+                  `<li><figure><img id="Avatar" alt="Avatar" src="${cod(data.AVATAR)}"></figure><u>${cod(data.USUARIO)}</u> ${dformat}<br>${cod(data.TEXTO)}</li>`;
               })
             },
             /* Función que se invoca cuando hay un error. Muestra el error. Al
