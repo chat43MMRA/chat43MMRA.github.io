@@ -17,6 +17,7 @@
   </head>
   <body>
     <h1>Chat</h1>
+    <figure><img id="Avatar" alt="Avatar"></figure>
     <form action="javascript:agrega();">
       <input id="texto" type="text" required placeholder="Mensaje">
       <button>Enviar</button>
@@ -46,7 +47,7 @@
             // Usuario aceptado.
             usuario = usuarioAuth.email;
             // FOTO DE AVATAR
-            avatar = usuarioAuth.photoURL;
+            Avatar.src = usuarioAuth.photoURL;
             // Muestra los mensajes del chat.
             muestraMensajes();
           } else {
@@ -72,7 +73,6 @@
           TEXTO: texto.value.trim(),
           // @ts-ignore
           TIMESTAMP: firebase.firestore.FieldValue.serverTimestamp(),
-          AVATAR: avatar,
         });
       }
       /** Muestra los mensaje almacenados en la collection "MENSAJE". Se
@@ -105,7 +105,7 @@
                  * para evitar inyección de código. */
                 // @ts-ignore
                 mensajes.innerHTML += /* html */
-                  `<li><figure><img id="avatar" alt="Avatar" src="${cod(data.AVATAR)}"></figure><u>${cod(data.USUARIO)}</u> ${dformat}<br>${cod(data.TEXTO)}</li>`;
+                  `<li><u>${cod(data.USUARIO)}</u> ${dformat}<br>${cod(data.TEXTO)}</li>`;
               })
             },
             /* Función que se invoca cuando hay un error. Muestra el error. Al
