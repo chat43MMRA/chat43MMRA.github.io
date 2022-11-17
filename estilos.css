@@ -2,5 +2,6 @@ body {
   font-family: sans-serif;
 }
 #Avatar{
-  border-radius: 10px;
+  height: 20px;
+  border-radius: 20px;
 }
