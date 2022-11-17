@@ -11,3 +11,6 @@ body {
 figure{
   width: 50px;
 }
+.msg{
+  display: inline-block;
+}
