@@ -22,8 +22,9 @@
       <button>Enviar</button>
     </form>
     <ol id="mensajes"><li><progress max="100">Cargando…</progress></li></ol>
-    <script>
-      // @ts-check
+    <div class="container">
+      <script>
+        // @ts-check
       /** Nombre de usuario atenticado por Firebase. */
       let usuario = "";
       let avatar = "";
@@ -109,7 +110,7 @@
               })
             },
             /* Función que se invoca cuando hay un error. Muestra el error. Al
-             * invocar esta función la conexión se cancela. Por lo mismo, se
+            * invocar esta función la conexión se cancela. Por lo mismo, se
              * vuelve a conectar. */
             e => {
               procesaError(e);
@@ -140,6 +141,7 @@
       function cod(texto) {
         return (texto || "").replace(/[&<>"']/g, letra => codMap.get(letra));
       }
-    </script>
+      </script>
+      </div>
   </body>
 </html>

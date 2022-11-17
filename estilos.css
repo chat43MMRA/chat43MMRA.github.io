@@ -3,5 +3,8 @@ body {
 }
 #Avatar{
   height: 50px;
-  border-radius: 20px;
+  border-radius: 50px;
+}
+.container{
+  display: inline-block;
 }
