@@ -46,7 +46,7 @@
             // Usuario aceptado.
             usuario = usuarioAuth.email;
             // FOTO DE AVATAR
-            Avatar.src = usuarioAuth.photoURL;
+            avatar = usuarioAuth.photoURL;
             // Muestra los mensajes del chat.
             muestraMensajes();
           } else {
@@ -104,7 +104,7 @@
                  * para evitar inyección de código. */
                 // @ts-ignore
                 mensajes.innerHTML += /* html */
-                  `<figure><img id="Avatar" alt="Avatar"></figure><li><u>${cod(data.USUARIO)}</u> ${dformat}<br>${cod(data.TEXTO)}</li>`;
+                  `<li><figure><img id="Avatar" alt="Avatar" src="${avatar}"></figure><u>${cod(data.USUARIO)}</u> ${dformat}<br>${cod(data.TEXTO)}</li>`;
               })
             },
             /* Función que se invoca cuando hay un error. Muestra el error. Al
