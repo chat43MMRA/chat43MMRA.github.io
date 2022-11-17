@@ -8,3 +8,6 @@ body {
 .container{
   display: inline-block;
 }
+figure{
+  width: 50px;
+}
