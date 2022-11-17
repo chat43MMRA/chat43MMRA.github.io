@@ -104,7 +104,7 @@
                  * para evitar inyección de código. */
                 // @ts-ignore
                 mensajes.innerHTML += /* html */
-                  `<li><figure><img id="Avatar" alt="Avatar" src="${avatar}"></figure><u>${cod(data.USUARIO)}</u> ${dformat}<br>${cod(data.TEXTO)}</li>`;
+                  `<li><u>${cod(data.USUARIO)}</u> ${dformat}<br>${cod(data.TEXTO)}</li>`;
               })
             },
             /* Función que se invoca cuando hay un error. Muestra el error. Al
